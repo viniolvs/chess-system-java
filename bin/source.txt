@@ -1,6 +1,8 @@
 ./application/App.java
 ./application/UI.java
+./chess/ChessPosition.java
 ./chess/Color.java
+./chess/ChessException.java
 ./chess/pieces/Rook.java
 ./chess/pieces/King.java
 ./chess/ChessMatch.java
