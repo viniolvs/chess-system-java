@@ -5,6 +5,7 @@
 ./chess/pieces/King.java
 ./chess/ChessMatch.java
 ./chess/ChessPiece.java
+./boardgame/BoardException.java
 ./boardgame/Board.java
 ./boardgame/Position.java
 ./boardgame/Piece.java
