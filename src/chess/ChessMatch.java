@@ -1,11 +1,10 @@
 package chess;
 
 import boardgame.Board;
-import boardgame.Position;
-import chess.pieces.Rook;
-import chess.pieces.King;
-import boardgame.Position;
 import boardgame.Piece;
+import boardgame.Position;
+import chess.pieces.King;
+import chess.pieces.Rook;
 
 public class ChessMatch {
     private Board board;
@@ -29,6 +28,7 @@ public class ChessMatch {
         Position source = sourcePosition.toPosition();
         Position target = targetPosition.toPosition();
         validateSourcePosition(source);
+        validateTargetPosition(source,target);
         Piece capturedPiece = makeMove(source,target);
         return (ChessPiece)capturedPiece;
     }
@@ -46,6 +46,12 @@ public class ChessMatch {
         }
         if (!board.piece(position).isThereAnyPossibleMove()) {
             throw new ChessException("There is no moves for the chosen piece");
+        }
+    }
+
+    private void validateTargetPosition(Position source, Position target){
+        if(!board.piece(source).possibleMove(target)){
+            throw new ChessException("The chosen piece can't move to target position");
         }
     }
 
